@@ -36,8 +36,6 @@ def direct_stat(direct_user: str):
             number_in_folder += 1
     with open('JSON.json', 'w', encoding='utf-8') as f:
         json.dump(file_json, f, indent=4, ensure_ascii=False)
-    print(file_json)
-
 
 if __name__ == '__main__':
     direct_stat('/Users/timuribatulin/Downloads')
