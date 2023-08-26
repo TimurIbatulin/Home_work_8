@@ -6,6 +6,7 @@
 import csv
 import json
 import os
+import pickle
 
 def direct_stat(direct_user: str):
     information_dir = os.walk(direct_user)
@@ -49,6 +50,9 @@ def direct_stat(direct_user: str):
         csv_write = csv.writer(c)
         csv_write.writerow(heads_csv)
         csv_write.writerows(file_csv)
+    
+    with open('PICKLE.pickle', 'wb') as p:
+        pickle.dump(file_csv, p)
 
 if __name__ == '__main__':
     direct_stat('/Users/timuribatulin/Downloads')
